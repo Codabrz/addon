@@ -1,24 +1,18 @@
-package a.b.c;
+package com.example.addon;
 
-import a.b.c.modules.ExampleModule;
+import com.example.addon.modules.CFPredictor;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class Addon extends MeteorAddon {
-    public static final Logger LOG = LoggerFactory.getLogger(Addon.class);
-
+public class AddonTemplate extends MeteorAddon {
     @Override
     public void onInitialize() {
-        LOG.info("Ucitavam CF Predictor Addon!");
-
-        // Registracija tvog modula
-        Modules.get().add(new ExampleModule());
+        // Registrujemo tvoj novi CF modul
+        Modules.get().add(new CFPredictor());
     }
 
     @Override
     public String getPackage() {
-        return "a.b.c";
+        return "com.example.addon";
     }
 }
